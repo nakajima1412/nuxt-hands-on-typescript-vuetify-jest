@@ -21,8 +21,7 @@
               href="https://vuetifyjs.com"
               target="_blank"
               rel="noopener noreferrer"
-            >
-              documentation </a
+              >documentation </a
             >.
           </p>
           <p>
@@ -43,8 +42,7 @@
               target="_blank"
               rel="noopener noreferrer"
               title="contribute"
-            >
-              issue board </a
+              >issue board</a
             >.
           </p>
           <p>
@@ -52,42 +50,43 @@
             more exciting features in the future.
           </p>
           <div class="text-xs-right">
-            <em><small>&mdash; John Leider</small></em>
+            <em>
+              <small>&mdash; John Leider</small>
+            </em>
           </div>
           <hr class="my-3" />
           <a
             href="https://nuxtjs.org/"
             target="_blank"
             rel="noopener noreferrer"
+            >Nuxt Documentation</a
           >
-            Nuxt Documentation
-          </a>
           <br />
           <a
             href="https://github.com/nuxt/nuxt.js"
             target="_blank"
             rel="noopener noreferrer"
+            >Nuxt GitHub</a
           >
-            Nuxt GitHub
-          </a>
         </v-card-text>
         <v-card-actions>
           <v-spacer />
-          <v-btn color="primary" nuxt to="/inspire"> Continue </v-btn>
+          <v-btn color="primary" nuxt to="/inspire">Continue</v-btn>
         </v-card-actions>
       </v-card>
     </v-flex>
   </v-layout>
 </template>
 
-<script>
+<script lang="ts">
+import Vue from 'vue'
 import Logo from '~/components/Logo.vue'
 import VuetifyLogo from '~/components/VuetifyLogo.vue'
 
-export default {
+export default Vue.extend({
   components: {
     Logo,
     VuetifyLogo,
   },
-}
+})
 </script>

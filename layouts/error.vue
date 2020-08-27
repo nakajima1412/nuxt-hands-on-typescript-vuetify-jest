@@ -1,38 +1,36 @@
 <template>
   <v-app dark>
-    <h1 v-if="error.statusCode === 404">
-      {{ pageNotFound }}
-    </h1>
-    <h1 v-else>
-      {{ otherError }}
-    </h1>
-    <NuxtLink to="/"> Home page </NuxtLink>
+    <h1 v-if="error.statusCode === 404">{{ pageNotFound }}</h1>
+    <h1 v-else>{{ otherError }}</h1>
+    <NuxtLink to="/">Home page</NuxtLink>
   </v-app>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue, { PropOptions } from 'vue'
+
+export default Vue.extend({
   layout: 'empty',
   props: {
     error: {
       type: Object,
       default: null,
-    },
+    } as PropOptions<any>,
   },
   data() {
     return {
-      pageNotFound: '404 Not Found',
-      otherError: 'An error occurred',
+      pageNotFound: '404 Not Found' as string,
+      otherError: 'An error occurred' as string,
     }
   },
   head() {
-    const title =
+    const title: string =
       this.error.statusCode === 404 ? this.pageNotFound : this.otherError
     return {
       title,
     }
   },
-}
+})
 </script>
 
 <style scoped>
